@@ -92,7 +92,9 @@ var products = [
 // console.log(typeof(result));
 // console.log(Array.isArray(result));
 
+
 /*                 MAP                */
+
 // let mapped = nums.map(function(elem) {
 //     return elem*10;
 // })
@@ -118,7 +120,7 @@ var products = [
 //         mapedArray.push(elem);
 //     }
 //     return mapedArray;
-//     // (10)[Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7)]
+//     (10)[Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7), Array(7)]
 // })
 // console.log(toArray);
 // (10)[undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
@@ -176,89 +178,99 @@ var products = [
 // }
 
 
-// fetch("https://vape-shop.herokuapp.com/catalog", { method: "GET" })
-//     .then(response => response.json())
-//     .then(function (data) {
-//         let products = data.products;
 
-//         // console.log(products, "Исходный массив");
 
-//         // products.forEach(function (item, index, array) {
-//         //     // посмотри тут по отдельности, что находится в переменных item,
-//         //     // index, array, выведя их в консоль. Потом напиши форич сам, удалив этот.
-//         //     // Это просто цикл, перебор массива, он ничего не возвращает
 
-//         //     // console.log(array);
-//         // });
+/*                ФИЛЬТРУЕМ ЖИЖКИ     */
 
-//         // products.forEach(function(item, index, array) {
-//         //     console.log(item);
-//         //     console.log(index);
-//         //     console.log(array);
-//         // })
 
-//         // let filteredProducts = products.filter(function (item, index, array) {
-//         //     // filter возвращает новый массив, только из элементов, для
-//         //     // которых этот колбэк возвращает true. Ниже его можно увидеть в консоль логе.
-//         //     // Напиши тут, что бы фильтровались только предметы, которые есть в наличии.
-//         //     // Обязателен оператор return;
 
-//         //     return item.isAvailable === true
+fetch("https://vape-shop.herokuapp.com/catalog", { method: "GET" })
+    .then(response => response.json())
+    .then(function (data) {
+        let products = data.products;
+
+
+
+        // console.log(products, "Исходный массив");
+        // products.forEach(function (item, index, array) {
+        //     // посмотри тут по отдельности, что находится в переменных item,
+        //     // index, array, выведя их в консоль. Потом напиши форич сам, удалив этот.
+        //     // Это просто цикл, перебор массива, он ничего не возвращает
+
+        //     // console.log(array);
+        // });
+
+        // products.forEach(function(item, index, array) {
+        //     console.log(item);
+        //     console.log(index);
+        //     console.log(array);
+        // })
+
+        // let filteredProducts = products.filter(function (item, index, array) {
+        //     // filter возвращает новый массив, только из элементов, для
+        //     // которых этот колбэк возвращает true. Ниже его можно увидеть в консоль логе.
+        //     // Напиши тут, что бы фильтровались только предметы, которые есть в наличии.
+        //     // Обязателен оператор return;
+
+        //     return item.isAvailable === true
             
-//         // });
+        // });
 
 
 
 
-//         // let productsPrices = products.map(function (item, index, array) {
-//         //     // map возвращает так же новый массив, из результатов применения
-//         //     // колбэка к каждому его элементу (на каждой итерации).
-//         //     // Тут количество элементов не изменится, просто получим новый массив чего-то
+        // let productsPrices = products.map(function (item, index, array) {
+        //     // map возвращает так же новый массив, из результатов применения
+        //     // колбэка к каждому его элементу (на каждой итерации).
+        //     // Тут количество элементов не изменится, просто получим новый массив чего-то
 
-//         //     return item.price;
-//         // });
+        //     return item.price;
+        // });
 
-//         // console.log('Совокупная стоимость: ' + sumPrices);
-//         // console.log(filteredProducts, "Показываем только айтемы в наличии");
-//         // console.log(productsPrices, "Показываем цены всех айтемов");
+        // console.log('Совокупная стоимость: ' + sumPrices);
+        // console.log(filteredProducts, "Показываем только айтемы в наличии");
+        // console.log(productsPrices, "Показываем цены всех айтемов");
 
 
-//         // let filteredProducts = products.filter(function(item, index, array) {
-//         //     return item.price > 100;
-//         // })
-//         // console.log('Отфильтрованные товары свыше 100: ' + filteredProducts);
+        // let filteredProducts = products.filter(function(item, index, array) {
+        //     return item.price > 100;
+        // })
+        // console.log('Отфильтрованные товары свыше 100: ' + filteredProducts);
 
-//         // let mappedProducts = filteredProducts.map(function(item, index, array) {
-//         //     return item.price
-//         // })
+        // let mappedProducts = filteredProducts.map(function(item, index, array) {
+        //     return item.price
+        // })
 
-//         // console.log('Только цены: ' + mappedProducts);
+        // console.log('Только цены: ' + mappedProducts);
 
-//         // let sumProducts = mappedProducts.reduce(function(sum, item) {
-//         //     return sum + item;
-//         // }) 
-
-//         // console.log('Сумма: ' + sumProducts);
+        // let sumProducts = mappedProducts.reduce(function(sum, item) {
+        //     return sum + item;
+        // }) 
+        // console.log('Сумма: ' + sumProducts);
 
         
-//         // console.log('Initial array: ', products);
 
-//         // let filteredProducts = products.filter(item => item.price > 100);
-//         // console.log('Price > 100', filteredProducts);
+        // // ИЗУЧАЕМ СССТРЕЛОЧНЫЕ ФУНКЦИИ
+        
+        // console.log('Initial array: ', products);
 
-//         // let mappedProducts = products.map(item => item.price);
-//         // console.log('Only price', mappedProducts);
+        // let filteredProducts = products.filter(item => item.price > 100);
+        // console.log('Price > 100', filteredProducts);
 
-//         // let sumPrices = mappedProducts.reduce((sum, item)  => sum + item);
-//         // console.log('Total price', sumPrices);
+        // let mappedProducts = products.map(item => item.price);
+        // console.log('Only price', mappedProducts);
 
-//         // let sum = products
-//         //     .filter(item => item.price > 100)
-//         //     .map(item => item.price)
-//         //     .reduce((sum, item) => sum + item);
+        // let sumPrices = mappedProducts.reduce((sum, item)  => sum + item);
+        // console.log('Total price', sumPrices);
 
-//         // console.log(sum);
-//     })
+        // let sum = products
+        //     .filter(item => item.price > 100)
+        //     .map(item => item.price)
+        //     .reduce((sum, item) => sum + item);
+
+        // console.log(sum);
+    })
 
 
     
