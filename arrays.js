@@ -1,4 +1,5 @@
 var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 var people = [
     {
         name: 'John',
@@ -23,6 +24,37 @@ var people = [
     {
         name: 'Jerry',
         age: 30
+    }
+]
+
+var products = [
+    {
+        name: 'varezhka',
+        price: 200
+    },
+    {
+        name: 'myshka',
+        price: 110
+    },
+    {
+        name: 'sosiski',
+        price: 50
+    },
+    {
+        name: 'hlebushek',
+        price: 30
+    },
+    {
+        name: 'ochki',
+        price: 10
+    },
+    {
+        name: 'vzdryzhni',
+        price: 25
+    },
+    {
+        name: 'kapustochka',
+        price: 5
     }
 ]
 
@@ -98,21 +130,135 @@ var people = [
 /*                 REDUCE           */
 
 // будем сокращать массив до одного простого значения
-let sum = nums.reduce(function(sum, elem) {
-    return sum + elem;
-})
-console.log(sum);
-// sum = 0 + 1 => sum =  0 + 1 + 2, = sum = 0 + 1 + 2 + 3 etc...
-// 55
+// let sum = nums.reduce(function(sum, elem) {
+//     return sum + elem;
+// })
+// console.log(sum);
+// // sum = 0 + 1 => sum =  0 + 1 + 2, = sum = 0 + 1 + 2 + 3 etc...
+// // 55
 
-let sumPeopleAge = people.reduce(function(age, elem) {
-//    return age + elem.age;
+// let sumPeopleAge = people.reduce(function(age, elem) {
+// //    return age + elem.age;
 
-/*      ||     */
+// /*      ||     */
 
-   return age + elem['age'];
-});
-console.log(sumPeopleAge);
+//    return age + elem['age'];
+// });
+// console.log(sumPeopleAge);
 // [object Object]40200506030
 // [object Object]40200506030
 // console.log(people['age']);
+
+
+
+// var reducers = {
+//     rubles: function(state, item) {
+//         return state.rubles += item.price;
+//     },
+//     dollars: function (state, item) {
+//         return state.dollars += item.price / 71.6024
+//     },
+//     euros: function (state, item) {
+//         return state.euros += item.price / 79.0133
+//     },
+//     yens: function (state, item) {
+//         return state.yens += item.price / 0.6341
+//     },
+//     pounds: function (state, item) {
+//         return state.pounds += item.price / 101.7829
+//     },
+// }
+
+// var combineReducers = function(reducers) {
+//     return function(state, item) {
+//         return Object.keys(reducers).reduce()
+//     }
+// }
+
+
+// fetch("https://vape-shop.herokuapp.com/catalog", { method: "GET" })
+//     .then(response => response.json())
+//     .then(function (data) {
+//         let products = data.products;
+
+//         // console.log(products, "Исходный массив");
+
+//         // products.forEach(function (item, index, array) {
+//         //     // посмотри тут по отдельности, что находится в переменных item,
+//         //     // index, array, выведя их в консоль. Потом напиши форич сам, удалив этот.
+//         //     // Это просто цикл, перебор массива, он ничего не возвращает
+
+//         //     // console.log(array);
+//         // });
+
+//         // products.forEach(function(item, index, array) {
+//         //     console.log(item);
+//         //     console.log(index);
+//         //     console.log(array);
+//         // })
+
+//         // let filteredProducts = products.filter(function (item, index, array) {
+//         //     // filter возвращает новый массив, только из элементов, для
+//         //     // которых этот колбэк возвращает true. Ниже его можно увидеть в консоль логе.
+//         //     // Напиши тут, что бы фильтровались только предметы, которые есть в наличии.
+//         //     // Обязателен оператор return;
+
+//         //     return item.isAvailable === true
+            
+//         // });
+
+
+
+
+//         // let productsPrices = products.map(function (item, index, array) {
+//         //     // map возвращает так же новый массив, из результатов применения
+//         //     // колбэка к каждому его элементу (на каждой итерации).
+//         //     // Тут количество элементов не изменится, просто получим новый массив чего-то
+
+//         //     return item.price;
+//         // });
+
+//         // console.log('Совокупная стоимость: ' + sumPrices);
+//         // console.log(filteredProducts, "Показываем только айтемы в наличии");
+//         // console.log(productsPrices, "Показываем цены всех айтемов");
+
+
+//         // let filteredProducts = products.filter(function(item, index, array) {
+//         //     return item.price > 100;
+//         // })
+//         // console.log('Отфильтрованные товары свыше 100: ' + filteredProducts);
+
+//         // let mappedProducts = filteredProducts.map(function(item, index, array) {
+//         //     return item.price
+//         // })
+
+//         // console.log('Только цены: ' + mappedProducts);
+
+//         // let sumProducts = mappedProducts.reduce(function(sum, item) {
+//         //     return sum + item;
+//         // }) 
+
+//         // console.log('Сумма: ' + sumProducts);
+
+        
+//         // console.log('Initial array: ', products);
+
+//         // let filteredProducts = products.filter(item => item.price > 100);
+//         // console.log('Price > 100', filteredProducts);
+
+//         // let mappedProducts = products.map(item => item.price);
+//         // console.log('Only price', mappedProducts);
+
+//         // let sumPrices = mappedProducts.reduce((sum, item)  => sum + item);
+//         // console.log('Total price', sumPrices);
+
+//         // let sum = products
+//         //     .filter(item => item.price > 100)
+//         //     .map(item => item.price)
+//         //     .reduce((sum, item) => sum + item);
+
+//         // console.log(sum);
+//     })
+
+
+    
